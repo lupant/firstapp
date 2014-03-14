@@ -17,14 +17,16 @@ Class('App', 'xui.Com',{
             
             append((new xui.UI.SButton())
             .setHost(host,"ctl_sbutton1")
-            .setLeft(340)
-            .setTop(330)
+            .setDock("center")
+            .setLeft(330)
+            .setTop(310)
             .setCaption("click me")
             .onClick("_ctl_sbutton1_onclick")
             );
             
             append((new xui.UI.DatePicker())
             .setHost(host,"ctl_datepicker1")
+            .setDock("center")
             .setLeft(250)
             .setTop(100)
             .setValue(new Date(2014,2,14,0,0,0,0))
