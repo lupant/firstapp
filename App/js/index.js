@@ -15,21 +15,16 @@ Class('App', 'xui.Com',{
             // [[Code created by CrossUI RAD Tools
             var host=this, children=[], append=function(child){children.push(child.get(0));};
             
-            append((new xui.UI.SButton())
-            .setHost(host,"ctl_sbutton1")
-            .setDock("center")
-            .setLeft(330)
-            .setTop(310)
-            .setCaption("click me")
-            .onClick("_ctl_sbutton1_onclick")
-            );
-            
-            append((new xui.UI.DatePicker())
-            .setHost(host,"ctl_datepicker1")
+            append((new xui.UI.Div())
+            .setHost(host,"ctl_div9")
+            .setDomId("slider")
             .setDock("center")
             .setLeft(250)
             .setTop(100)
-            .setValue(new Date(2014,2,14,0,0,0,0))
+            .setWidth(400)
+            .setHeight(210)
+            .setHtml(" <ul>\n        <li style=\"background-color: #F00\"></li>\n        <li style=\"background-color: #0F0\"></li>\n        <li style=\"background-color: #00F\"></li>\n    </ul>")
+            .setOverflow("hidden")
             );
             
             return children;
@@ -44,10 +39,7 @@ Class('App', 'xui.Com',{
             return false;
         },
         // This instance's events
-        events : {},
-        _ctl_sbutton1_onclick : function (profile, e, src, value) {
-            var uictrl = profile.boxing();
-            xui.alert(this.ctl_datepicker1.getUIValue());
-        }
+        events : {}
+       
     }
 });

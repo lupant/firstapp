@@ -1,1 +1,71 @@
-<!DOCTYPE html><html>    <head>        <meta http-equiv="content-type" content="text/html; charset=utf-8" />        <meta http-equiv="Content-Style-Type" content="text/css" />        <meta name="keywords" content="javascript, HTML5, CSS3, Form Builder, JSON Editor, RAD, SPA, IDE, UI, GUI, Ajax, cross-browser, cross-platform, develop" />        <meta name="description" content="Built by CrossUI RAD Tools - Develop Once,Deploy Anywhere, HTML5, CSS3 and JavaScript for all platforms" />        <meta name="copyright" content="copyright@crossui.com" />        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />        <meta http-equiv="imagetoolbar" content="no" />        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">        <link rel="stylesheet" type="text/css" href="runtime/xui/appearance/vista/theme.css" />        <title>Built by CrossUI RAD Tools - Develop Once,Deploy Anywhere</title>    </head>    <body>        <div id='loading'><img src="runtime/loading.gif" alt="Loading..." /></div>        <script type="text/javascript" src="runtime/xui/js/xui-all.js"></script>        <script type="text/javascript" src="runtime/xui/js/adv-all.js"></script>        <script type="text/javascript">                               xui.Com.load('App', function(){xui('loading').remove();});                       </script>            </body></html>
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" type="text/css" href="runtime/xui/appearance/vista/theme.css" />
+        <style>
+            #slider {
+                width: 400px;
+                overflow: hidden;
+            }
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+            li {
+                width: 400px;
+                height: 400px;
+                float: left;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        
+        <script type="text/javascript" src="runtime/xui/js/xui-all.js"></script>
+        <script type="text/javascript" src="runtime/xui/js/adv-all.js"></script>
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="App/js/index.js"></script>
+        
+        <script type="text/javascript">
+            
+            xui.main( init() );
+            
+            function init(){
+                
+                ins = new App;
+                ins.iniComponents();
+                xui('body').append(ins.getUIComponents());
+                
+            };
+            
+            Number.prototype.roundTo = function(nTo) {
+                nTo = nTo || 10;
+                return Math.round(this * (1 / nTo) ) * nTo;
+            }
+            
+            $(function() {
+                var slides = $('#slider ul').children().length;
+                var slideWidth = $('#slider').width();
+                var min = 0;
+                var max = -((slides - 1) * slideWidth);
+                
+                $("#slider ul").width(slides*slideWidth).draggable({
+                    axis: 'x',
+                    drag: function (event, ui) {
+                        if (ui.position.left > min) ui.position.left = min;
+                        if (ui.position.left < max) ui.position.left = max;
+                    },
+                    stop: function( event, ui ) {
+                        $(this).animate({'left': (ui.position.left).roundTo(slideWidth)})
+                    }
+                });
+            });
+            
+        </script>
+        
+    </body>
+</html>
