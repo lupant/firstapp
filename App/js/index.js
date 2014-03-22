@@ -18,12 +18,13 @@ Class('App', 'xui.Com',{
             append((new xui.UI.Div())
             .setHost(host,"ctl_div11")
             .setDock("center")
-            .setLeft(230)
+            .setLeft(210)
             .setTop(150)
             .setWidth(600)
             .setHeight(350)
             .setVisibility("visible")
-            .setHtml("<div id=\"slider\" class=\"swipe\"><div class=\"swipe-wrap\">\t<div>\t\t<img src=\"http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://www.tuttoandroid.net/wp-content/uploads/2014/03/go.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://www.itespresso.it/wp-content/uploads/2013/04/google-fiber-austin.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89ylZErZ84ZfBkbSuxQQAPnkEp75SpKtKpDuOZWBY98jnzEJxw\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://android.hdblog.it/wp-content/uploads/2013/06/google-apps-sphere1.jpeg\" width=\"600\" height=\"350\">\t</div></div><span class=\"nav prev\">Prev</span><span class=\"nav next\">Next</span>\n\t</div>")
+            .setHtml("<div class=\"swiper-container\"> <div class=\"swiper-wrapper\"> <div class=\"swiper-slide\"><img src=\"http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg\" width=\"600\" height=\"350\">\t</div>\t<div class=\"swiper-slide\">\t\t<img src=\"http://www.tuttoandroid.net/wp-content/uploads/2014/03/go.jpg\" width=\"600\" height=\"350\">\t</div class=\"swiper-slide\">\t<div>\t\t<img src=\"http://www.itespresso.it/wp-content/uploads/2013/04/google-fiber-austin.jpg\" width=\"600\" height=\"350\">\t</div class=\"swiper-slide\">\t<div>\t\t<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89ylZErZ84ZfBkbSuxQQAPnkEp75SpKtKpDuOZWBY98jnzEJxw\" width=\"600\" height=\"350\">\t</div>\t<div class=\"swiper-slide\">\t\t<img src=\"http://android.hdblog.it/wp-content/uploads/2013/06/google-apps-sphere1.jpeg\" width=\"600\" height=\"350\">\t</div></div> </div>")
+            .setOverflow("hidden")
             );
             
             append((new xui.UI.Button())
