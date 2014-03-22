@@ -22,7 +22,18 @@ Class('App', 'xui.Com',{
             .setTop(150)
             .setWidth(600)
             .setHeight(350)
-            .setHtml("<div id=\"slider\" class=\"swipe\">\n\t\t<div class=\"swipe-wrap\">\n\t\t\t<div>\n\t\t\t\t<img src=\"http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://www.tuttoandroid.net/wp-content/uploads/2014/03/go.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://www.itespresso.it/wp-content/uploads/2013/04/google-fiber-austin.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89ylZErZ84ZfBkbSuxQQAPnkEp75SpKtKpDuOZWBY98jnzEJxw\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://android.hdblog.it/wp-content/uploads/2013/06/google-apps-sphere1.jpeg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t</div>\n\t\t<span class=\"nav prev\">Prev</span>\n\t\t<span class=\"nav next\">Next</span>\n\t</div>")
+            .setVisibility("visible")
+            .setHtml("<div id=\"slider\" class=\"swipe\"><div class=\"swipe-wrap\">\t<div>\t\t<img src=\"http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://www.tuttoandroid.net/wp-content/uploads/2014/03/go.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://www.itespresso.it/wp-content/uploads/2013/04/google-fiber-austin.jpg\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89ylZErZ84ZfBkbSuxQQAPnkEp75SpKtKpDuOZWBY98jnzEJxw\" width=\"600\" height=\"350\">\t</div>\t<div>\t\t<img src=\"http://android.hdblog.it/wp-content/uploads/2013/06/google-apps-sphere1.jpeg\" width=\"600\" height=\"350\">\t</div></div><span class=\"nav prev\">Prev</span><span class=\"nav next\">Next</span>\n\t</div>")
+            );
+            
+            append((new xui.UI.Button())
+            .setHost(host,"ctl_button5")
+            .setDirtyMark(false)
+            .setDock("center")
+            .setLeft(430)
+            .setTop(80)
+            .setCaption("Refresh")
+            .onClick("_ctl_button5_onclick")
             );
             
             return children;
@@ -37,7 +48,11 @@ Class('App', 'xui.Com',{
             return false;
         },
         // This instance's events
-        events : {}
+        events : {},
+        _ctl_button5_onclick:function (profile,e,src,value){
+           
+            location.reload();
+        }
        
     },
     Static:{
