@@ -3,7 +3,7 @@
     <head>
         
         <link rel="stylesheet" type="text/css" href="runtime/xui/appearance/vista/theme.css" />
-        <link rel="stylesheet" type="text/css" href="swipe/dist/idangerous.swiper.css" />
+        <link rel="stylesheet" type="text/css" href="swipe/style.css" />
         
     </head>
     <body>
@@ -12,7 +12,7 @@
         <script type="text/javascript" src="runtime/xui/js/xui-all.js"></script>
         <script type="text/javascript" src="runtime/xui/js/adv-all.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script defer src="swipe/dist/idangerous.swiper.min.js"></script>
+        <script defer src="swipe/swipe.js"></script>
         <script type="text/javascript" src="App/js/index.js"></script>
         
         <script type="text/javascript">
@@ -24,22 +24,21 @@
                 ins = new App;
                 ins.iniComponents();
                 xui('body').append(ins.getUIComponents());
-      
+                
                 
             };
             
             
             $(document).ready(function() {
+                Slider = $('#slider').Swipe({
+                    auto: 2000,
+                    continuous: true
+                }).data('Swipe');
                 
-                var mySwiper = new Swiper('.swiper-container',{
-                    //Your options here:
-                    mode:'horizontal',
-                    loop: true
-                    //etc..
-                });  
-                
+                $('.next').on('click', Slider.next);
+                $('.prev').on('click', Slider.prev);
             });
-        
+            
         </script>
         
     </body>
