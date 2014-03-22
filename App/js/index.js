@@ -17,12 +17,8 @@ Class('App', 'xui.Com',{
             
             append((new xui.UI.Pane())
             .setHost(host,"ctl_pane8")
-            .setDock("center")
+            .setDock("fill")
             .setDockFloat(true)
-            .setLeft(180)
-            .setTop(50)
-            .setWidth(925)
-            .setHeight(960)
             .setPosition("relative")
             .setOverflow("auto")
             );
@@ -31,7 +27,7 @@ Class('App', 'xui.Com',{
             .setHost(host,"ctl_div11")
             .setDock("center")
             .setLeft(210)
-            .setTop(110)
+            .setTop(70)
             .setWidth(600)
             .setHeight(350)
             .setVisibility("visible")
@@ -43,7 +39,7 @@ Class('App', 'xui.Com',{
             .setHost(host,"ctl_div48")
             .setDock("center")
             .setLeft(180)
-            .setTop(490)
+            .setTop(460)
             .setWidth(600)
             .setHeight(450)
             .setHtml("<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23841.872187536166!2d12.511056661300383!3d41.67228900958879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1395472502339\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>")
@@ -54,10 +50,22 @@ Class('App', 'xui.Com',{
             .setHost(host,"ctl_sbutton3")
             .setDock("center")
             .setLeft(470)
-            .setTop(70)
+            .setTop(30)
             .setWidth(90)
             .setCaption("Refresh")
             .onClick("_ctl_sbutton3_onclick")
+            );
+            
+            append((new xui.UI.Div())
+            .setHost(host,"ctl_div139")
+            .setDock("left")
+            .setWidth(100)
+            );
+            
+            append((new xui.UI.Div())
+            .setHost(host,"ctl_div140")
+            .setDock("right")
+            .setWidth(100)
             );
             
             return children;
