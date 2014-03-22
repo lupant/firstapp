@@ -16,15 +16,13 @@ Class('App', 'xui.Com',{
             var host=this, children=[], append=function(child){children.push(child.get(0));};
             
             append((new xui.UI.Div())
-            .setHost(host,"ctl_div9")
-            .setDomId("slider")
+            .setHost(host,"ctl_div11")
             .setDock("center")
-            .setLeft(250)
-            .setTop(100)
-            .setWidth(400)
-            .setHeight(210)
-            .setHtml(" <ul>\n        <li style=\"background-color: #F00\"></li>\n        <li style=\"background-color: #0F0\"></li>\n        <li style=\"background-color: #00F\"></li>\n    </ul>")
-            .setOverflow("hidden")
+            .setLeft(230)
+            .setTop(150)
+            .setWidth(600)
+            .setHeight(350)
+            .setHtml("<div id=\"slider\" class=\"swipe\">\n\t\t<div class=\"swipe-wrap\">\n\t\t\t<div>\n\t\t\t\t<img src=\"http://blogs.independent.co.uk/wp-content/uploads/2012/12/google-zip.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://www.tuttoandroid.net/wp-content/uploads/2014/03/go.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://www.itespresso.it/wp-content/uploads/2013/04/google-fiber-austin.jpg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm89ylZErZ84ZfBkbSuxQQAPnkEp75SpKtKpDuOZWBY98jnzEJxw\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t\t<div>\n\t\t\t\t<img src=\"http://android.hdblog.it/wp-content/uploads/2013/06/google-apps-sphere1.jpeg\" width=\"600\" height=\"350\">\n\t\t\t</div>\n\t\t</div>\n\t\t<span class=\"nav prev\">Prev</span>\n\t\t<span class=\"nav next\">Next</span>\n\t</div>")
             );
             
             return children;
@@ -41,5 +39,8 @@ Class('App', 'xui.Com',{
         // This instance's events
         events : {}
        
+    },
+    Static:{
+        viewSize:{"width":1024, "height":768}
     }
 });

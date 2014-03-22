@@ -4,19 +4,44 @@
         
         <link rel="stylesheet" type="text/css" href="runtime/xui/appearance/vista/theme.css" />
         <style>
-            #slider {
-                width: 400px;
+            .swipe {
                 overflow: hidden;
+                position: relative;
+                max-width: 600px;
+                width: 100%;
+                height: 350px;
+                
             }
-            ul {
-                list-style: none;
-                margin: 0;
-                padding: 0;
+            .swipe-wrap {
+                overflow: hidden;
+                position: relative;
             }
-            li {
-                width: 400px;
-                height: 400px;
+            .swipe-wrap > div {
                 float: left;
+                width: 100%;
+                position: relative;
+            }
+            .swipe .nav {
+                position: absolute;
+                width: 80px;
+                height: 38px;
+                z-index: 10;
+                text-align: center;
+                line-height: 40px;
+                display: inline-block;
+                color: #fff;
+                top: 45%;
+                cursor: pointer;
+                background-color: rgba(0,0,0,0.8)
+            }
+            .swipe .nav.next {
+                right: 0;
+                -webkit-border-radius: 3px 0 0 3px;
+                border-radius: 3px 0 0 3px;
+            }
+            .swipe .nav.prev {
+                -webkit-border-radius: 0 3px 3px 0;
+                border-radius: 0 3px 3px 0;
             }
         </style>
         
@@ -27,7 +52,7 @@
         <script type="text/javascript" src="runtime/xui/js/xui-all.js"></script>
         <script type="text/javascript" src="runtime/xui/js/adv-all.js"></script>
         <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script type="text/javascript" src="swipe/swipe.js"></script>
         <script type="text/javascript" src="App/js/index.js"></script>
         
         <script type="text/javascript">
@@ -40,30 +65,22 @@
                 ins.iniComponents();
                 xui('body').append(ins.getUIComponents());
                 
+                
+                
             };
             
-            Number.prototype.roundTo = function(nTo) {
-                nTo = nTo || 10;
-                return Math.round(this * (1 / nTo) ) * nTo;
-            }
             
-            $(function() {
-                var slides = $('#slider ul').children().length;
-                var slideWidth = $('#slider').width();
-                var min = 0;
-                var max = -((slides - 1) * slideWidth);
+            $(document).ready(function() {
+                Slider = $('#slider').Swipe({
+                    auto: 3000,
+                    continuous: true
+                }).data('Swipe');
                 
-                $("#slider ul").width(slides*slideWidth).draggable({
-                    axis: 'x',
-                    drag: function (event, ui) {
-                        if (ui.position.left > min) ui.position.left = min;
-                        if (ui.position.left < max) ui.position.left = max;
-                    },
-                    stop: function( event, ui ) {
-                        $(this).animate({'left': (ui.position.left).roundTo(slideWidth)})
-                    }
-                });
+                $('.next').on('click', Slider.next);
+                $('.prev').on('click', Slider.prev);
             });
+            
+            
             
         </script>
         
