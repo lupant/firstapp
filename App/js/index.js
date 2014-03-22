@@ -15,11 +15,23 @@ Class('App', 'xui.Com',{
             // [[Code created by CrossUI RAD Tools
             var host=this, children=[], append=function(child){children.push(child.get(0));};
             
-            append((new xui.UI.Div())
+            append((new xui.UI.Pane())
+            .setHost(host,"ctl_pane8")
+            .setDock("center")
+            .setDockFloat(true)
+            .setLeft(180)
+            .setTop(50)
+            .setWidth(925)
+            .setHeight(960)
+            .setPosition("relative")
+            .setOverflow("auto")
+            );
+            
+            host.ctl_pane8.append((new xui.UI.Div())
             .setHost(host,"ctl_div11")
             .setDock("center")
             .setLeft(210)
-            .setTop(150)
+            .setTop(110)
             .setWidth(600)
             .setHeight(350)
             .setVisibility("visible")
@@ -27,14 +39,25 @@ Class('App', 'xui.Com',{
             .setOverflow("hidden")
             );
             
-            append((new xui.UI.Button())
-            .setHost(host,"ctl_button5")
-            .setDirtyMark(false)
+            host.ctl_pane8.append((new xui.UI.Div())
+            .setHost(host,"ctl_div48")
             .setDock("center")
-            .setLeft(430)
-            .setTop(80)
+            .setLeft(180)
+            .setTop(490)
+            .setWidth(600)
+            .setHeight(450)
+            .setHtml("<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23841.872187536166!2d12.511056661300383!3d41.67228900958879!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sit!2sit!4v1395472502339\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\"></iframe>")
+            .setOverflow("hidden")
+            );
+            
+            host.ctl_pane8.append((new xui.UI.SButton())
+            .setHost(host,"ctl_sbutton3")
+            .setDock("center")
+            .setLeft(470)
+            .setTop(70)
+            .setWidth(90)
             .setCaption("Refresh")
-            .onClick("_ctl_button5_onclick")
+            .onClick("_ctl_sbutton3_onclick")
             );
             
             return children;
@@ -50,13 +73,13 @@ Class('App', 'xui.Com',{
         },
         // This instance's events
         events : {},
-        _ctl_button5_onclick:function (profile,e,src,value){
-           
+        _ctl_sbutton3_onclick:function (profile,e,src,value){
+            
             location.reload();
         }
-       
+        
     },
     Static:{
-        viewSize:{"width":1024, "height":768}
+        viewSize:{"width":1280, "height":1024}
     }
 });
