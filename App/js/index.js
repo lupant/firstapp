@@ -52,7 +52,7 @@ Class('App', 'xui.Com',{
             .setLeft(470)
             .setTop(30)
             .setWidth(90)
-            .setCaption("Refresh")
+            .setCaption("Reload")
             .onClick("_ctl_sbutton3_onclick")
             );
             
